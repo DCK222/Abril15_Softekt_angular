@@ -1,0 +1,27 @@
+<body>
+    <div id="armatupc">
+    <ul>
+        <p>Genero :</p>
+        <ul>
+            @for (generos of Genero; track $index) {
+                <ul>{{generos.nombre}} <input type="checkbox" [(ngModel)]="generos.selected"></ul>
+            }
+        </ul>
+    </ul>
+
+    <p>Nacionalidades : </p>
+    <select [(ngModel)]="nacionalidadesSeleciconar" name="" id="">
+    @for(nacionalidades of Nacionalidad ; track nacionalidades.id){
+        <option [value]="nacionalidades.nombre">{{nacionalidades.nombre}}</option>
+    }
+    </select>
+
+    <ul>
+        <p>Lenguajes de Programacion : </p>
+        @for (lenguaje of Lenguajes; track $index) {
+            <ul>{{lenguaje.nombre}} <input type="checkbox" [(ngModel)]="lenguaje.selected" name="" id=""></ul>
+        }
+    </ul>
+    <button (click)="mostrarinfo()">Mostrar informacion</button>
+</div>
+</body>

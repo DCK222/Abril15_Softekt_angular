@@ -1,0 +1,30 @@
+<body>
+    <div id="armatupc"> 
+    <p>Origen: </p>
+    <select [(ngModel)]="seleccionarOrigen">
+    @for(destino of destinos; track destino.nombre){
+        <option [value]="destino.nombre">{{destino.nombre}}</option>
+    }
+    </select>
+
+    <p>Destinos : </p>
+    <select [(ngModel)]="seleccionarOrigen2">
+    @for(destino2 of destinos2; track destino2.id){
+        <option [value]="destino2.nombre">{{destino2.nombre}}</option>
+    }
+    </select>
+
+    <p>Fecha de ida : </p>
+    <input [(ngModel)]="fechaIda"  type="date" name="" id="">
+
+    <p>Fecha de Vuelta : </p>
+    <input [(ngModel)]="fechaVuelta" type="date" name="" id="">
+
+    <p>Numero de pasajeros : </p>
+    <input [(ngModel)]="pasajerosnum" type="number">
+
+   
+
+    <button (click)="mostrarinfor()">Mostrar informacion</button>
+</div>
+</body>

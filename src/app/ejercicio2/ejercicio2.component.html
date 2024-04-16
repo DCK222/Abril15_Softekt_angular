@@ -1,0 +1,48 @@
+<body>
+    <div id="armatupc">
+        <h1>Arma tu pc</h1>
+
+        <ul>
+            @for (RAM of RAMopciones; track RAM) {
+            <ul>
+                <li>{{ RAM.hola }} <input [(ngModel)]="ramSeleccionada[RAM.id]" type="checkbox"></li>
+            </ul>
+            }
+        </ul>
+        <ul>
+            <p>Tipo Procesador :</p>
+            <select id="procesado" [(ngModel)]="procesadorSeleccionado">
+                @for (procesador of procesadores; track procesador.id) {
+                <option [value]="procesador.nombre">
+                    {{procesador.nombre}}</option>
+                }
+            </select>
+        </ul>
+        <ul>
+            <p>Tarjeta Grafica : <input type="checkbox" [(ngModel)]="checkboxactivo" (change)="marcado()" name="" id="">
+            </p>
+
+        </ul>
+        <ul>
+            <p>Discos Duros : </p>
+            @for (alimentacion of fuente; track alimentacion) {
+            <ul>
+                <li>{{alimentacion.nombre}} <input [(ngModel)]="alimentacion.selected" type="checkbox"></li>
+            </ul>
+            }
+        </ul>
+
+        <ul>
+            <p>Fuentes de alimentacion : </p>
+            <select id="procesado" [(ngModel)]="fuentesalimentacionsele">
+                @for (alimentacioTIpo of fuenteTipo; track alimentacioTIpo) {
+
+
+                <option [value]="alimentacioTIpo.tipo">{{alimentacioTIpo.tipo}}</option>
+                }
+            </select>
+        </ul>
+
+        <button (click)="opcioneselec()">mostrarInfo</button>
+    </div>
+</body>
